@@ -1,1 +1,25 @@
-<p>layout works!</p>
+<app-navbar [drawer]="drawer" />
+
+<mat-drawer-container class="h-[93vh]" autosize>
+  <mat-drawer #drawer class="h-[93vh] bg-purple-300" mode="side">
+    <button
+      mat-icon-button
+      class="example-icon favorite-icon"
+      aria-label="Example icon-button with heart icon"
+    >
+      <mat-icon>favorite</mat-icon>
+    </button>
+  </mat-drawer>
+
+  <div class="bg-red-200">
+    <div class="bg-yellow-100">
+      <div class="bg-gray-200">
+        <div class="bg-green-200 h-60">
+          <app-header/>
+          <ng-content />
+          <app-footer/>
+        </div>
+      </div>
+    </div>
+  </div>
+</mat-drawer-container>
