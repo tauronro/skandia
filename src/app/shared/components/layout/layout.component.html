@@ -1,25 +1,40 @@
-<app-navbar [drawer]="drawer" />
+<body>
+  <main>
+    <app-navbar [drawer]="drawer" />
+    <section class="flex">
+      <mat-drawer-container class="h-[93vh]" autosize>
 
-<mat-drawer-container class="h-[93vh]" autosize>
-  <mat-drawer #drawer class="h-[93vh] bg-purple-300" mode="side">
-    <button
-      mat-icon-button
-      class="example-icon favorite-icon"
-      aria-label="Example icon-button with heart icon"
-    >
-      <mat-icon>favorite</mat-icon>
-    </button>
-  </mat-drawer>
+        <mat-drawer #drawer class="bg-gray-200 w-20 flex flex-col" mode="side">
+          <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+            <mat-icon>favorite</mat-icon>
+          </button>
+        </mat-drawer>
 
-  <div class="bg-red-200">
-    <div class="bg-yellow-100">
-      <div class="bg-gray-200">
-        <div class="bg-green-200 h-60">
-          <app-header/>
-          <ng-content />
-          <app-footer/>
+        <div class="bg-yellow-100 grow">
+          <article class="bg-green-200 pb-24">
+            <app-header />
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio dolorum autem explicabo omnis, tenetur
+              ipsa
+              placeat. Earum architecto, ipsum et quis dolores a perferendis nesciunt doloribus quod nam illo non.
+            </p>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio dolorum autem explicabo omnis, tenetur
+              ipsa
+              placeat. Earum architecto, ipsum et quis dolores a perferendis nesciunt doloribus quod nam illo non.
+            </p>
+          </article>
         </div>
-      </div>
-    </div>
-  </div>
-</mat-drawer-container>
+      </mat-drawer-container>
+    </section>
+
+      <ng-content />
+
+    <!-- <section>
+      <ng-content />
+    </section> -->
+    <footer>
+      <app-footer />
+    </footer>
+  </main>
+</body>
